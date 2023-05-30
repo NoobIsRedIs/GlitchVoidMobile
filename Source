@@ -1,0 +1,24 @@
+local Button = Instance.new("TextButton")
+Button.Parent = game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.MagicHealth
+Button.Size = UDim2.new(0, 163, 0, 25)
+Button.Text = "Click To Teleport To Part Void"
+Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+Button.TextStrokeTransparency = 0
+Button.AnchorPoint = Vector2.new(1, 0)
+Button.BackgroundColor3 = Color3.fromRGB(41, 28, 28)
+Button.BorderColor3 = Color3.fromRGB(170, 0, 0)
+local Part = Instance.new("Part")
+Part.Name = "Void"
+Part.Parent = game.Workspace
+Part.Position = Vector3.new(138, 669, 587)
+Part.Anchored = true
+Part.CanCollide = false
+Part.CanQuery = false
+Part.CanTouch = false
+Part.Transparency = 1
+print("Mobile Player")
+
+Button.MouseButton1Click:Connect(function()
+local Players = game.Players.LocalPlayer.Character.HumanoidRootPart
+Players.CFrame = Part.CFrame
+end)
